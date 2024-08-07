@@ -24,7 +24,4 @@ public class BallBrokenFloor {
         //used only for testing
         return minBrokeFloor;
     }
-    public int getnFloors() {
-        return nFloors;
-    }
 }
