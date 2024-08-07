@@ -15,10 +15,12 @@ public class BrokenFloorTest {
             try {
                 bbf.checkFloor(midFloor);
                 dFloor = midFloor + 1;
-            } catch (IllegalArgumentException e) {
-                upFloor = upFloor / 2;
+            } 
+            catch (IllegalArgumentException e) {
+                upFloor = midFloor - 1;
 
-            } catch (Exception e) {
+            } 
+            catch (Exception e) {
                 minFloor = midFloor;
                 upFloor = midFloor - 1;
             }
@@ -28,7 +30,7 @@ public class BrokenFloorTest {
 
     @Test
     void minimalBrokenFloorTest() {
-        int[] floors = { 200, 17, 1001, 2000 };
+        int[] floors = { 200, 17, 1001, 2000, 1, 10000, 2000000000};
         for (int i = 0; i < floors.length; i++) {
             BallBrokenFloor bbf = new BallBrokenFloor(floors[i]);
             assertEquals(bbf.getMinBrokenFloor(), getMinimalBrokenFloor(bbf));
