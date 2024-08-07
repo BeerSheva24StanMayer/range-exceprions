@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 public class BrokenFloorTest {
     private int getMinimalBrokenFloor(BallBrokenFloor bbf) {
         int dFloor = 1;
-        int upFloor = bbf.nFloors;
+        int upFloor = bbf.getnFloors();
         int minFloor = -1;
         while (dFloor <= upFloor) {
             int midFloor = upFloor - (upFloor - dFloor) / 2;

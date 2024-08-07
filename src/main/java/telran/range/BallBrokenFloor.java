@@ -3,8 +3,8 @@ package telran.range;
 import java.util.Random;
 
 public class BallBrokenFloor {
-    int nFloors;
-    int minBrokeFloor;
+    private int nFloors;
+    private int minBrokeFloor;
 
     public BallBrokenFloor(int nFloors) {
         this.nFloors = nFloors;
@@ -23,5 +23,8 @@ public class BallBrokenFloor {
     public int getMinBrokenFloor() {
         //used only for testing
         return minBrokeFloor;
+    }
+    public int getnFloors() {
+        return nFloors;
     }
 }
