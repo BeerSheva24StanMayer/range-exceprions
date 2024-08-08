@@ -16,10 +16,6 @@ public class BrokenFloorTest {
                 bbf.checkFloor(midFloor);
                 dFloor = midFloor + 1;
             } 
-            catch (IllegalArgumentException e) {
-                upFloor = midFloor - 1;
-
-            } 
             catch (Exception e) {
                 minFloor = midFloor;
                 upFloor = midFloor - 1;
