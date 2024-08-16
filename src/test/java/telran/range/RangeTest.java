@@ -48,6 +48,8 @@ public class RangeTest {
 
     @Test
     void predicateTest() {
+
+        //With predicator on
         Range range = Range.getRange(0, 10);
         range.setPredicate(i -> i % 2 == 0);
         Iterator<Integer> it = range.iterator();
@@ -61,9 +63,22 @@ public class RangeTest {
             index++;
         }
 
-        
     assertArrayEquals(expected, actual);
     assertThrowsExactly(NoSuchElementException.class, it::next);
 
+
+        //With predicator off
+        Range range1 = Range.getRange(0, 10);
+        Iterator<Integer> it1 = range1.iterator();
+        Integer[] expected1 = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+        Integer[] actual1 = new Integer[expected1.length];
+        int index1 = 0;
+
+        while (it1.hasNext()) {
+            actual1[index1] = it1.next();
+            index1++;
+        }
+        assertArrayEquals(expected, actual);
+    assertThrowsExactly(NoSuchElementException.class, it::next);
 }
 }

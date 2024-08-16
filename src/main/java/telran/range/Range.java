@@ -56,12 +56,12 @@ public class Range implements Iterable<Integer> {
                     number++;
                 }
             }
-            return result;
+            return number;
         }
 
         @Override
         public boolean hasNext() {
-            return current != null;
+            return current <= max;
         }
 
 
