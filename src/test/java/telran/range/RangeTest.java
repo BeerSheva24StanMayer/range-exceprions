@@ -61,6 +61,7 @@ public class RangeTest {
             index++;
         }
 
+        
     assertArrayEquals(expected, actual);
     assertThrowsExactly(NoSuchElementException.class, it::next);
 
