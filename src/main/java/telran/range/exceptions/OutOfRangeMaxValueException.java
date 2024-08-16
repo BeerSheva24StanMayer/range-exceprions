@@ -5,3 +5,4 @@ public class OutOfRangeMaxValueException extends Exception{
         super(String.format("Out of range max: %d, number: %d", max, value));
     }
 }
+ 
