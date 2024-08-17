@@ -48,14 +48,11 @@ public class Range implements Iterable<Integer> {
 
         private Integer getNextElement(Integer number) {
             Integer result = null;
-            while (number <= max && result == null) {
-                if (predicate == null || predicate.test(number)) {
-                    result = number;
-                }
-                else {
-                    number++;
-                }
+            while ((number <= max && result == null) &&
+                    !(predicate == null || predicate.test(number))) {
+                number++;
             }
+            result = number;
             return number;
         }
 
@@ -64,14 +61,13 @@ public class Range implements Iterable<Integer> {
             return current <= max;
         }
 
-
         @Override
         public Integer next() {
-            if(!hasNext()) {
+            if (!hasNext()) {
                 throw new NoSuchElementException();
             }
             Integer result = current;
-            current = getNextElement(++current);
+            current = getNextElement(current + 1);
 
             return result;
         }
